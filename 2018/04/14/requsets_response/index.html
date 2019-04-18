@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>requests_Response对象的属性文档 | whyswonderland</title>
+  <meta name="keywords" content=" python , requests , 爬虫 ">
+  <meta name="description" content="requests_Response对象的属性文档 | whyswonderland">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Response对象，包含了服务器对HTTP请求的响应。   这是一份机译+人工编辑的官方文档 * 标出的属性是初学者应该了解掌握的(个人认为)   *apparent_encoding The apparent encoding, provided by the chardet library.r.apparent_encoding   从内容中分析的相应内容的编码方式 r.encoding=">
+<meta name="keywords" content="python,requests,爬虫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="requests_Response对象的属性文档">
+<meta property="og:url" content="http://yoursite.com/2018/04/14/requsets_response/index.html">
+<meta property="og:site_name" content="whyswonderland">
+<meta property="og:description" content="Response对象，包含了服务器对HTTP请求的响应。   这是一份机译+人工编辑的官方文档 * 标出的属性是初学者应该了解掌握的(个人认为)   *apparent_encoding The apparent encoding, provided by the chardet library.r.apparent_encoding   从内容中分析的相应内容的编码方式 r.encoding=">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-06-08T11:18:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="requests_Response对象的属性文档">
+<meta name="twitter:description" content="Response对象，包含了服务器对HTTP请求的响应。   这是一份机译+人工编辑的官方文档 * 标出的属性是初学者应该了解掌握的(个人认为)   *apparent_encoding The apparent encoding, provided by the chardet library.r.apparent_encoding   从内容中分析的相应内容的编码方式 r.encoding=">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link rel="stylesheet" href="/css/style.css">
+
+<link rel="stylesheet" href="/css/hl_theme/atom-dark.css">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/photoswipe/4.1.2/default-skin/default-skin.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+</div>
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg">
+</a>
+<div class="author">
+    <span>why</span>
+</div>
+
+<div class="icon">
+    
+    <a class="rss" title="rss" href="/atom.xml" target="_blank"></a>
+    
+    
+    <a class="github" title="github" href="https://github.com/whyswonderland" target="_blank"></a>
+    
+    
+    
+    
+    
+    
+    
+    
+    <a class="email" title="email" href="mailto:670997051@qq.com"></a>
+    
+</div>
+
+
+
+<ul>
+    <li class="all active">全部文章</li>
+    
+    <li data-rel="数据获取"> 数据获取 </li>
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="3">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off" id="local-search-input">
+        <i class="cross"></i>
+        <span>
+        <label for="tagswitch">Tags:</label>
+        <input id="tagswitch" type="checkbox">
+    </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">python</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">requests</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">爬虫</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">R</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">quantmod</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a class="数据获取 " href="/2018/04/14/requsets_response/" data-tag="python,requests,爬虫" data-author>
+            <span class="post-title" title="requests_Response对象的属性文档">requests_Response对象的属性文档</span>
+            <span class="post-date" title="2018-04-14 23:40:01">2018/04/14</span>
+        </a>
+        
+        <a class="数据获取 " href="/2018/04/14/requests_requests/" data-tag="python,requests,爬虫" data-author>
+            <span class="post-title" title="requests主要接口">requests主要接口</span>
+            <span class="post-date" title="2018-04-14 23:40:01">2018/04/14</span>
+        </a>
+        
+        <a class="数据获取 " href="/2018/04/11/quantmod_1/" data-tag="R,quantmod" data-author>
+            <span class="post-title" title="R利用quantmod获取股票价格">R利用quantmod获取股票价格</span>
+            <span class="post-date" title="2018-04-11 18:20:34">2018/04/11</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-requsets_response" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">requests_Response对象的属性文档</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+            <a href="javascript:" data-rel="数据获取">数据获取</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color2">python</a>
+            
+            <a href="javascript:" class="color4">requests</a>
+            
+            <a href="javascript:" class="color3">爬虫</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title="更新时间: 2018-06-08 19:18:58">2018-04-14 23:40</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#apparent-encoding"><span class="toc-text">*apparent_encoding</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#close"><span class="toc-text">close()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#content"><span class="toc-text">*content</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookies-None"><span class="toc-text">cookies = None</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#elapsed-None"><span class="toc-text">elapsed = None</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#encoding-None"><span class="toc-text">*encoding = None</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#headers-None"><span class="toc-text">*headers = None</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#history-None"><span class="toc-text">history = None</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#is-permanent-redirect"><span class="toc-text">is_permanent_redirect</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#is-redirect"><span class="toc-text">is_redirect</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iter-content-chunk-size-1-decode-unicode-False"><span class="toc-text">iter_content(chunk_size=1, decode_unicode=False)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iter-lines-chunk-size-512-decode-unicode-None-delimiter-None"><span class="toc-text">iter_lines(chunk_size=512, decode_unicode=None, delimiter=None)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#json-kwargs"><span class="toc-text">*json(**kwargs)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#links"><span class="toc-text">links</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#next"><span class="toc-text">next</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ok"><span class="toc-text">ok</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#raise-for-status"><span class="toc-text">*raise_for_status()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#raw-None"><span class="toc-text">raw = None</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reason-None"><span class="toc-text">reason = None</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#request-None"><span class="toc-text">request = None</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#status-code-None"><span class="toc-text">*status_code = None</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#text"><span class="toc-text">*text</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#url-None"><span class="toc-text">*url = None</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Response对象，包含了服务器对HTTP请求的响应。</p>
+</blockquote>
+<ul>
+<li>这是一份机译+人工编辑的官方文档</li>
+<li><strong>*</strong> 标出的属性是初学者应该了解掌握的(个人认为)</li>
+</ul>
+<p><br></p>
+<h2 id="apparent-encoding"><a href="#apparent-encoding" class="headerlink" title="*apparent_encoding"></a>*apparent_encoding</h2><blockquote>
+<p>The apparent encoding, provided by the chardet library.<br>r.apparent_encoding </p>
+</blockquote>
+<p>从内容中分析的相应内容的编码方式</p>
+<pre><code>r.encoding=r.apparent_encoding #常用于编码更改
+</code></pre><p><br></p>
+<h2 id="close"><a href="#close" class="headerlink" title="close()"></a>close()</h2><blockquote>
+<p>Releases the connection back to the pool. Once this method has been called the underlying raw object must not be accessed again.</p>
+</blockquote>
+<p>将连接释放回池中。 一旦调用了该方法，就不能再次访问基础原始对象。</p>
+<ul>
+<li>Note: Should not normally need to be called explicitly.</li>
+<li>注意：通常不需要明确调用。</li>
+</ul>
+<p><br></p>
+<h2 id="content"><a href="#content" class="headerlink" title="*content"></a>*content</h2><blockquote>
+<p>Content of the response, in bytes.</p>
+</blockquote>
+<p>r.content相应内容的二进制形式<br>r.content #字节方式的响应体，会自动为你解码 gzip 和 deflate 压缩</p>
+<p><br></p>
+<h2 id="cookies-None"><a href="#cookies-None" class="headerlink" title="cookies = None"></a>cookies = None</h2><blockquote>
+<p>A CookieJar of Cookies the server sent back.</p>
+</blockquote>
+<p>服务器发回的Cookies CookieJar。</p>
+<p><br></p>
+<h2 id="elapsed-None"><a href="#elapsed-None" class="headerlink" title="elapsed = None"></a>elapsed = None</h2><blockquote>
+<p>The amount of time elapsed between sending the request and the arrival of the response (as a timedelta). This property specifically measures the time taken between sending the first byte of the request and finishing parsing the headers. It is therefore unaffected by consuming the response content or the value of the stream keyword argument.</p>
+</blockquote>
+<p>发送请求和响应到达之间所经过的时间量（作为timedelta）。 该属性具体测量发送请求的第一个字节和完成解析报头之间的时间。 因此它不受消费响应内容或流关键字参数值的影响。</p>
+<p><br></p>
+<h2 id="encoding-None"><a href="#encoding-None" class="headerlink" title="*encoding = None"></a>*encoding = None</h2><blockquote>
+<p>Encoding to decode with when accessing r.text.</p>
+</blockquote>
+<p>从Http header猜测的编码方式</p>
+<ul>
+<li>r.encoding从header的charset获取编码形式,如果没有则默认ISO-8859-1</li>
+</ul>
+<p><br></p>
+<h2 id="headers-None"><a href="#headers-None" class="headerlink" title="*headers = None"></a>*headers = None</h2><blockquote>
+<p>Case-insensitive Dictionary of Response Headers. For example, headers[‘content-encoding’] will return the value of a ‘Content-Encoding’ response header.</p>
+</blockquote>
+<p>以字典对象存储服务器响应头，但是这个字典比较特殊，字典键不区分大小写，仅为 HTTP 头部而生若键不存在则返回None</p>
+<p><br></p>
+<h2 id="history-None"><a href="#history-None" class="headerlink" title="history = None"></a>history = None</h2><blockquote>
+<p>A list of Response objects from the history of the Request. Any redirect responses will end up here. The list is sorted from the oldest to the most recent request.</p>
+</blockquote>
+<p>请求历史记录中的Response对象列表。 任何重定向响应都会在这里结束。 该列表从最旧的到最近的请求进行排序。</p>
+<p><br></p>
+<h2 id="is-permanent-redirect"><a href="#is-permanent-redirect" class="headerlink" title="is_permanent_redirect"></a>is_permanent_redirect</h2><blockquote>
+<p>True if this Response one of the permanent versions of redirect.</p>
+</blockquote>
+<p>如果此响应为真，则为重定向的永久版本之一。</p>
+<p><br></p>
+<h2 id="is-redirect"><a href="#is-redirect" class="headerlink" title="is_redirect"></a>is_redirect</h2><blockquote>
+<p>True if this Response is a well-formed HTTP redirect that could have been processed automatically (by Session.resolve_redirects).</p>
+</blockquote>
+<p>如果此响应是可以自动处理的格式良好的HTTP重定向（通过Session.resolve_redirects），则为true。</p>
+<p><br></p>
+<h2 id="iter-content-chunk-size-1-decode-unicode-False"><a href="#iter-content-chunk-size-1-decode-unicode-False" class="headerlink" title="iter_content(chunk_size=1, decode_unicode=False)"></a>iter_content(chunk_size=1, decode_unicode=False)</h2><blockquote>
+<p>Iterates over the response data. When stream=True is set on the request, this avoids reading the content at once into memory for large responses. The chunk size is the number of bytes it should read into memory. This is not necessarily the length of each item returned as decoding can take place.<br>chunk_size must be of type int or None. A value of None will function differently depending on the value of stream. stream=True will read data as it arrives in whatever size the chunks are received. If stream=False, data is returned as a single chunk.<br>If decode_unicode is True, content will be decoded using the best available encoding based on the response.</p>
+</blockquote>
+<p>迭代响应数据。 在请求中设置stream = True时，可以避免将内容一次性读入内存以获得较大的响应。 块大小是它应该读入内存的字节数。 这不一定是解码可能发生时返回的每个项目的长度。</p>
+<p>chunk_size必须是int或None类型。 根据流的值，None的值将有不同的功能。 stream = True将在数据以任何大小接收到的数据到达时读取数据。 如果stream = False，则数据作为单个块返回。</p>
+<p>如果decode_unicode为True，则内容将使用基于响应的最佳可用编码进行解码。</p>
+<p><br></p>
+<h2 id="iter-lines-chunk-size-512-decode-unicode-None-delimiter-None"><a href="#iter-lines-chunk-size-512-decode-unicode-None-delimiter-None" class="headerlink" title="iter_lines(chunk_size=512, decode_unicode=None, delimiter=None)"></a>iter_lines(chunk_size=512, decode_unicode=None, delimiter=None)</h2><blockquote>
+<p>Iterates over the response data, one line at a time. When stream=True is set on the request, this avoids reading the content at once into memory for large responses.</p>
+</blockquote>
+<p>迭代响应数据，一次一行。 在请求中设置stream = True时，可以避免将内容一次性读入内存以获得较大的响应。</p>
+<p><br></p>
+<h2 id="json-kwargs"><a href="#json-kwargs" class="headerlink" title="*json(**kwargs)"></a>*json(**kwargs)</h2><blockquote>
+<p>Returns the json-encoded content of a response, if any.</p>
+</blockquote>
+<p>返回响应的json编码内容（如果有的话）。</p>
+<p>参数:    **kwargs – Optional arguments that json.loads takes.<br>引发:    ValueError – If the response body does not contain valid json.</p>
+<p><br></p>
+<h2 id="links"><a href="#links" class="headerlink" title="links"></a>links</h2><blockquote>
+<p>Returns the parsed header links of the response, if any.</p>
+</blockquote>
+<p>返回解析的响应头部链接（如果有的话）。</p>
+<p><br></p>
+<h2 id="next"><a href="#next" class="headerlink" title="next"></a>next</h2><blockquote>
+<p>Returns a PreparedRequest for the next request in a redirect chain, if there is one.</p>
+</blockquote>
+<p>返回重定向链中下一个请求的PreparedRequest（如果有）。</p>
+<p><br></p>
+<h2 id="ok"><a href="#ok" class="headerlink" title="ok"></a>ok</h2><blockquote>
+<p>Returns True if status_code is less than 400.</p>
+</blockquote>
+<p>如果status_code小于400，则返回True。</p>
+<blockquote>
+<p>This attribute checks if the status code of the response is between 400 and 600 to see if there was a client error or a server error. If the status code, is between 200 and 400, this will return True. This is not a check to see if the response code is 200 OK.</p>
+</blockquote>
+<p>此属性检查响应的状态代码是否在400到600之间，以查看是否存在客户端错误或服务器错误。 如果状态码在200到400之间，则返回True。 这不是检查以确定响应代码是否为200 OK。</p>
+<p><br></p>
+<h2 id="raise-for-status"><a href="#raise-for-status" class="headerlink" title="*raise_for_status()"></a>*raise_for_status()</h2><blockquote>
+<p>Raises stored HTTPError, if one occurred.</p>
+</blockquote>
+<p>引发存储的HTTPError（如果发生）。</p>
+<ul>
+<li>r.raise_for_status() #失败请求(非200响应)抛出异常</li>
+</ul>
+<p><br></p>
+<h2 id="raw-None"><a href="#raw-None" class="headerlink" title="raw = None"></a>raw = None</h2><blockquote>
+<p>File-like object representation of response (for advanced usage). Use of raw requires that stream=True be set on the request.</p>
+</blockquote>
+<p>响应的类似文件的对象表示（用于高级用法）。 原始使用要求在请求中设置</p>
+<ul>
+<li>r.raw #返回原始响应体，也就是 urllib 的 response 对象，使用 r.raw.read() 读取</li>
+</ul>
+<p><br></p>
+<h2 id="reason-None"><a href="#reason-None" class="headerlink" title="reason = None"></a>reason = None</h2><blockquote>
+<p>Textual reason of responded HTTP Status, e.g. “Not Found” or “OK”.</p>
+</blockquote>
+<p>响应的HTTP状态的文本原因，例如 “未找到”或“确定”。</p>
+<p><br></p>
+<h2 id="request-None"><a href="#request-None" class="headerlink" title="request = None"></a>request = None</h2><blockquote>
+<p>The PreparedRequest object to which this is a response.</p>
+</blockquote>
+<p>PreparedRequest对象，这是一个响应。</p>
+<p><br></p>
+<h2 id="status-code-None"><a href="#status-code-None" class="headerlink" title="*status_code = None"></a>*status_code = None</h2><blockquote>
+<p>Integer Code of responded HTTP Status, e.g. 404 or 200.</p>
+</blockquote>
+<p>整数响应的HTTP状态代码，例如 404或200。</p>
+<pre><code>&gt;&gt;&gt; r = requests.get(&apos;http://httpbin.org/get&apos;)
+&gt;&gt;&gt; r.status_code
+200
+&gt;&gt;&gt; r.status_code == requests.codes.ok
+True
+</code></pre><p><br></p>
+<h2 id="text"><a href="#text" class="headerlink" title="*text"></a>*text</h2><blockquote>
+<p>Content of the response, in unicode.If Response.encoding is None, encoding will be guessed using chardet.The encoding of the response content is determined based solely on HTTP headers, following RFC 2616 to the letter. If you can take advantage of non-HTTP knowledge to make a better guess at the encoding, you should set r.encoding appropriately before accessing this property.</p>
+</blockquote>
+<p>响应的内容，以unicode表示。如果Response.encoding为None，则编码将使用chardet进行猜测。响应内容的编码完全基于HTTP头部，遵循字母的RFC 2616。 如果您可以利用非HTTP知识来更好地猜测编码，则应该在访问此属性之前正确设置r.encoding。</p>
+<ul>
+<li>r.text响应内容的字符串形式,即url对应的页面内容</li>
+<li>r.text会自动根据响应头部的字符编码进行解码</li>
+</ul>
+<p><br></p>
+<h2 id="url-None"><a href="#url-None" class="headerlink" title="*url = None"></a>*url = None</h2><blockquote>
+<p>Final URL location of Response.</p>
+</blockquote>
+<p>响应的最终URL位置。</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在邮件至 670997051@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span>文章标题:</span>requests_Response对象的属性文档</p>
+    
+    <p><span>本文作者:</span><a href="javascript:void(0)" title="why">why</a></p>
+    <p><span>发布时间:</span>2018-04-14, 23:40:01</p>
+    <p><span>最后更新:</span>2018-06-08, 19:18:58</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/04/14/requsets_response/" title="requests_Response对象的属性文档">http://yoursite.com/2018/04/14/requsets_response/</a>
+    <p>
+        <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+    
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2018 why</p>
+<p class="footer-entry">Buit with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>每转1块钱,你荷包就会少1蚊鸡</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="weixin">微信</label></span><span><label><input type="radio" name="pay" value="alipay">支付宝</label></span>
+    </div>
+</div>
+
+</body>
+<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe-ui-default.min.js"></script>
+
+<script src="/js/script.js"></script>
+<script>
+    var img_resize = 'photoSwipe';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#python','#requests','#爬虫','#R','#quantmod',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1;
+            var $numbering = $('<ul/>').addClass('pre-numbering').attr("unselectable","on");
+            $(this).addClass('has-numbering')
+                    .parent()
+                    .append($numbering);
+            for(i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+
+        // PhotoSwipe
+        $('article').each(function(i){
+            $(this).find('img').each(function(){
+                if ($(this).closest('figure').hasClass('article-gallery-img')) {
+                    return;
+                }
+                var alt = this.alt;
+                $(this)
+                    .wrap('<figure class="article-gallery-img" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"></figure>')
+                    .wrap('<a href="' + this.src + '" title="' + alt + '"></a>');
+                $(this).after('<div class="img_alt"><span>' + (alt || '') + '</span></div>');
+            });
+        });
+
+        var pswpElement = document.querySelectorAll('.pswp')[0];
+        if (pswpElement) {
+            var gallerySelector = '.article-gallery, article';
+
+            var initPhotoSwipeFromDOM = function(gallerySelector) {
+
+                // parse slide data (url, title, size ...) from DOM elements
+                // (children of gallerySelector)
+                var parseThumbnailElements = function(el) {
+                    var thumbElements = $(el).find('figure.article-gallery-img').toArray(),
+                        numNodes = thumbElements.length,
+                        items = [],
+                        figureEl,
+                        linkEl,
+                        size,
+                        imgEl,
+                        item;
+
+                    for (var i = 0; i < numNodes; i++) {
+
+                        figureEl = thumbElements[i]; // <figure> element
+
+                        // include only element nodes
+                        if (figureEl.nodeType !== 1) {
+                            continue;
+                        }
+
+                        linkEl = figureEl.children[0]; // <a> element
+                        imgEl = linkEl.children[0]; // <img>
+
+                        size = linkEl.getAttribute('data-size');
+                        size = size && size.split('x');
+
+                        // create slide object
+                        item = {
+                            src: linkEl.getAttribute('href'),
+                            w: size && parseInt(size[0], 10) || imgEl.width,
+                            h: size && parseInt(size[1], 10) || imgEl.height
+                        };
+
+                        if (figureEl.children.length > 1) {
+                            // <figcaption> content
+                            item.title = figureEl.children[1].innerHTML;
+                        }
+
+                        if (linkEl.children.length > 0) {
+                            // <img> thumbnail element, retrieving thumbnail url
+                            item.msrc = linkEl.children[0].getAttribute('src');
+                        }
+
+                        item.el = figureEl; // save link to element for getThumbBoundsFn
+                        items.push(item);
+                    }
+
+                    return items;
+                };
+
+                // find nearest parent element
+                var closest = function closest(el, fn) {
+                    return el && (fn(el) ? el : closest(el.parentNode, fn));
+                };
+
+                // triggers when user clicks on thumbnail
+                var onThumbnailsClick = function(e) {
+                    e = e || window.event;
+
+                    var eTarget = e.target || e.srcElement;
+
+                    // find root element of slide
+                    var clickedListItem = closest(eTarget, function(el) {
+                        return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
+                    });
+
+                    if (!clickedListItem) {
+                        return;
+                    }
+
+                    if (e.preventDefault) {
+                        e.preventDefault();
+                    } else {
+                        e.returnValue = false;
+                    }
+
+                    // find index of clicked item by looping through all child nodes
+                    // alternatively, you may define index via data- attribute
+                    var clickedGallery = $(clickedListItem).closest(gallerySelector)[0],
+                        childNodes = $(clickedGallery).find('figure.article-gallery-img').toArray(),
+                        numChildNodes = childNodes.length,
+                        nodeIndex = 0,
+                        index;
+
+                    for (var i = 0; i < numChildNodes; i++) {
+                        if (childNodes[i].nodeType !== 1) {
+                            continue;
+                        }
+
+                        if (childNodes[i] === clickedListItem) {
+                            index = nodeIndex;
+                            break;
+                        }
+                        nodeIndex++;
+                    }
+
+
+
+                    if (index >= 0) {
+                        // open PhotoSwipe if valid index found
+                        openPhotoSwipe(index, clickedGallery);
+                    }
+                    return false;
+                };
+
+                // parse picture index and gallery index from URL (#&pid=1&gid=2)
+                var photoswipeParseHash = function() {
+                    var hash = window.location.hash.substring(1),
+                        params = {};
+
+                    if (hash.length < 5) {
+                        return params;
+                    }
+
+                    var vars = hash.split('&');
+                    for (var i = 0; i < vars.length; i++) {
+                        if (!vars[i]) {
+                            continue;
+                        }
+                        var pair = vars[i].split('=');
+                        if (pair.length < 2) {
+                            continue;
+                        }
+                        params[pair[0]] = pair[1];
+                    }
+
+                    if (params.gid) {
+                        params.gid = parseInt(params.gid, 10);
+                    }
+
+                    return params;
+                };
+
+                var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
+                    var pswpElement = document.querySelectorAll('.pswp')[0],
+                        gallery,
+                        options,
+                        items;
+
+                    items = parseThumbnailElements(galleryElement);
+
+                    // define options (if needed)
+                    options = {
+
+                        // define gallery index (for URL)
+                        galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+
+                        getThumbBoundsFn: function(index) {
+                            // See Options -> getThumbBoundsFn section of documentation for more info
+                            var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+                                pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+                                rect = thumbnail.getBoundingClientRect();
+
+                            return {
+                                x: rect.left,
+                                y: rect.top + pageYScroll,
+                                w: rect.width
+                            };
+                        }
+                    };
+
+                    // PhotoSwipe opened from URL
+                    if (fromURL) {
+                        if (options.galleryPIDs) {
+                            // parse real index when custom PIDs are used
+                            // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
+                            for (var j = 0; j < items.length; j++) {
+                                if (items[j].pid == index) {
+                                    options.index = j;
+                                    break;
+                                }
+                            }
+                        } else {
+                            // in URL indexes start from 1
+                            options.index = parseInt(index, 10) - 1;
+                        }
+                    } else {
+                        options.index = parseInt(index, 10);
+                    }
+
+                    // exit if index not found
+                    if (isNaN(options.index)) {
+                        return;
+                    }
+
+                    if (disableAnimation) {
+                        options.showAnimationDuration = 0;
+                    }
+
+                    // Pass data to PhotoSwipe and initialize it
+                    gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+
+                    gallery.listen('imageLoadComplete', function(index, item) {
+                        var linkEl = item.el.children[0];
+                        var img = item.container.children[0];
+                        if (!linkEl.getAttribute('data-size')) {
+                            linkEl.setAttribute('data-size', img.naturalWidth + 'x' + img.naturalHeight);
+                            item.w = img.naturalWidth;
+                            item.h = img.naturalHeight;
+                            gallery.invalidateCurrItems();
+                            gallery.updateSize(true);
+                        }
+                    });
+
+                    gallery.init();
+                };
+
+                // loop through all gallery elements and bind events
+                var galleryElements = document.querySelectorAll(gallerySelector);
+
+                for (var i = 0, l = galleryElements.length; i < l; i++) {
+                    galleryElements[i].setAttribute('data-pswp-uid', i + 1);
+                    galleryElements[i].onclick = onThumbnailsClick;
+                }
+
+                // Parse URL and open gallery if it contains #&pid=3&gid=1
+                var hashData = photoswipeParseHash();
+                if (hashData.pid && hashData.gid) {
+                    openPhotoSwipe(hashData.pid, galleryElements[hashData.gid - 1], true, true);
+                }
+            };
+
+            // execute above function
+            initPhotoSwipeFromDOM(gallerySelector);
+        }
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 2px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 2px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /*引用块样式*/
+    
+    .post .pjax article blockquote {
+        padding: 10px 20px;
+        background-color: white;
+        border: none;
+        border-left: 4px solid #42b983;
+        border-right: 4px solid #42b983;
+        border-radius: 10px;
+    }
+    
+
+    /*文章列表背景图*/
+    
+</style>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element, as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+        <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+</html>
