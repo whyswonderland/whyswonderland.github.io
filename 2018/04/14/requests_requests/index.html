@@ -6,18 +6,18 @@
   <meta name="keywords" content=" python , requests , 爬虫 ">
   <meta name="description" content="requests主要接口 | whyswonderland">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="Response对象，包含了服务器对HTTP请求的响应。   这是一份机译+人工编辑的官方文档 * 标出的属性是初学者应该了解掌握的(个人认为)   *apparent_encoding The apparent encoding, provided by the chardet library.r.apparent_encoding   从内容中分析的相应内容的编码方式 r.encoding=">
+<meta name="description" content="Requests 所有的功能都可以通过以下 7 个方法访问。它们全部都会返回一个 Response 对象的实例。   1.1 requests.request(method, url, **kwargs) Constructs and sends a Request.  1.1.1选填参数:method  method for the new Request object.请求方式,对应http">
 <meta name="keywords" content="python,requests,爬虫">
 <meta property="og:type" content="article">
-<meta property="og:title" content="requests_Response对象的属性文档">
-<meta property="og:url" content="http://yoursite.com/2018/04/14/requsets_response/index.html">
+<meta property="og:title" content="requests主要接口">
+<meta property="og:url" content="http://yoursite.com/2018/04/14/requests_requests/index.html">
 <meta property="og:site_name" content="whyswonderland">
-<meta property="og:description" content="Response对象，包含了服务器对HTTP请求的响应。   这是一份机译+人工编辑的官方文档 * 标出的属性是初学者应该了解掌握的(个人认为)   *apparent_encoding The apparent encoding, provided by the chardet library.r.apparent_encoding   从内容中分析的相应内容的编码方式 r.encoding=">
+<meta property="og:description" content="Requests 所有的功能都可以通过以下 7 个方法访问。它们全部都会返回一个 Response 对象的实例。   1.1 requests.request(method, url, **kwargs) Constructs and sends a Request.  1.1.1选填参数:method  method for the new Request object.请求方式,对应http">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-08T11:18:58.000Z">
+<meta property="og:updated_time" content="2018-06-08T11:19:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="requests_Response对象的属性文档">
-<meta name="twitter:description" content="Response对象，包含了服务器对HTTP请求的响应。   这是一份机译+人工编辑的官方文档 * 标出的属性是初学者应该了解掌握的(个人认为)   *apparent_encoding The apparent encoding, provided by the chardet library.r.apparent_encoding   从内容中分析的相应内容的编码方式 r.encoding=">
+<meta name="twitter:title" content="requests主要接口">
+<meta name="twitter:description" content="Requests 所有的功能都可以通过以下 7 个方法访问。它们全部都会返回一个 Response 对象的实例。   1.1 requests.request(method, url, **kwargs) Constructs and sends a Request.  1.1.1选填参数:method  method for the new Request object.请求方式,对应http">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -153,13 +153,13 @@
     
     <nav id="title-list-nav">
         
-        <a class="数据获取 " href="/2018/04/14/requsets_response/" data-tag="python,requests,爬虫" data-author>
-            <span class="post-title" title="requests_Response对象的属性文档">requests_Response对象的属性文档</span>
+        <a class="数据获取 " href="/2018/04/14/requests_requests/" data-tag="python,requests,爬虫" data-author>
+            <span class="post-title" title="requests主要接口">requests主要接口</span>
             <span class="post-date" title="2018-04-14 23:40:01">2018/04/14</span>
         </a>
         
-        <a class="数据获取 " href="/2018/04/14/requests_requests/" data-tag="python,requests,爬虫" data-author>
-            <span class="post-title" title="requests主要接口">requests主要接口</span>
+        <a class="数据获取 " href="/2018/04/14/requsets_response/" data-tag="python,requests,爬虫" data-author>
+            <span class="post-title" title="requests_Response对象的属性文档">requests_Response对象的属性文档</span>
             <span class="post-date" title="2018-04-14 23:40:01">2018/04/14</span>
         </a>
         
@@ -257,8 +257,8 @@
 <p>(optional) Dictionary or bytes to be sent in the query string for the Request.</p>
 </blockquote>
 <p>字典或字节序列,作为参数增加到url中</p>
-<pre><code>&gt;&gt;&gt;kv = {&apos;key1&apos;:&apos;value1&apos;,&apos;key2&apos;:&apos;value2&apos;}
-&gt;&gt;&gt;r = requests.request(&apos;GET&apos;,&apos;http://python123.io/ws&apos;,params=kv)
+<pre><code>&gt;&gt;&gt;kv = {&#39;key1&#39;:&#39;value1&#39;,&#39;key2&#39;:&#39;value2&#39;}
+&gt;&gt;&gt;r = requests.request(&#39;GET&#39;,&#39;http://python123.io/ws&#39;,params=kv)
 &gt;&gt;&gt;print(r.url)
 </code></pre><p><br><br> <br></p>
 <p><strong>data</strong></p>
@@ -266,26 +266,26 @@
 <p>(optional) Dictionary or list of tuples [(key, value)] (will be form-encoded), bytes, or file-like object to send in the body of the Request.</p>
 </blockquote>
 <p>字典或字节序列或文件对象,向服务器提供或提交资源时使用</p>
-<pre><code>&gt;&gt;&gt;kv = {&apos;key1&apos;:&apos;value1&apos;,&apos;key2&apos;:&apos;value2&apos;}
-&gt;&gt;&gt;r = requests.request(&apos;POST&apos;,&apos;http://python123.io/ws&apos;,data=kv)
-&gt;&gt;&gt;body = &apos;主体内容&apos;
-&gt;&gt;&gt;r = requests.request(&apos;POST&apos;,&apos;http://python123.io/ws&apos;,data=body)
+<pre><code>&gt;&gt;&gt;kv = {&#39;key1&#39;:&#39;value1&#39;,&#39;key2&#39;:&#39;value2&#39;}
+&gt;&gt;&gt;r = requests.request(&#39;POST&#39;,&#39;http://python123.io/ws&#39;,data=kv)
+&gt;&gt;&gt;body = &#39;主体内容&#39;
+&gt;&gt;&gt;r = requests.request(&#39;POST&#39;,&#39;http://python123.io/ws&#39;,data=body)
 </code></pre><p><br><br></p>
 <p><strong>json</strong></p>
 <blockquote>
 <p>(optional) json data to send in the body of the Request.</p>
 </blockquote>
 <p>json格式的数据,作为request的内容</p>
-<pre><code>&gt;&gt;&gt;kv = {&apos;key1&apos;:&apos;value1&apos;}
-&gt;&gt;&gt;r = requests.request(&apos;POST&apos;,&apos;http://python123.io/ws&apos;,json=kv)
+<pre><code>&gt;&gt;&gt;kv = {&#39;key1&#39;:&#39;value1&#39;}
+&gt;&gt;&gt;r = requests.request(&#39;POST&#39;,&#39;http://python123.io/ws&#39;,json=kv)
 </code></pre><p><br><br></p>
 <p><strong>headers</strong></p>
 <blockquote>
 <p>(optional) Dictionary of HTTP Headers to send with the Request.</p>
 </blockquote>
 <p>字典,http定制头字段</p>
-<pre><code>&gt;&gt;&gt;hd = {&apos;user-agent&apos;:&apos;Chrome/10&apos;}
-&gt;&gt;&gt;r = requests.request(&apos;POST&apos;,&apos;http://python123.io/ws&apos;,headers=kv)
+<pre><code>&gt;&gt;&gt;hd = {&#39;user-agent&#39;:&#39;Chrome/10&#39;}
+&gt;&gt;&gt;r = requests.request(&#39;POST&#39;,&#39;http://python123.io/ws&#39;,headers=kv)
 </code></pre><p><br><br> <br></p>
 <p><strong>cookies</strong></p>
 <blockquote>
@@ -297,8 +297,8 @@
 <p>(optional) Dictionary of ‘name’: file-like-objects (or {‘name’: file-tuple}) for multipart encoding upload. file-tuple can be a 2-tuple (‘filename’, fileobj), 3-tuple (‘filename’, fileobj, ‘content_type’) or a 4-tuple (‘filename’, fileobj, ‘content_type’, custom_headers), where ‘content-type’ is a string defining the content type of the given file and custom_headers a dict-like object containing additional headers to add for the file.</p>
 </blockquote>
 <p>字典类型,传输文件</p>
-<pre><code>&gt;&gt;&gt;fs = {&apos;file&apos;:open(&apos;data.xls&apos;,&apos;rb&apos;)}
-&gt;&gt;&gt;r = requests.request(&apos;POST&apos;,&apos;http://python123.io/ws&apos;,files=fs)
+<pre><code>&gt;&gt;&gt;fs = {&#39;file&#39;:open(&#39;data.xls&#39;,&#39;rb&#39;)}
+&gt;&gt;&gt;r = requests.request(&#39;POST&#39;,&#39;http://python123.io/ws&#39;,files=fs)
 </code></pre><p><br><br> <br></p>
 <p><strong>auth</strong></p>
 <blockquote>
@@ -310,7 +310,7 @@
 <p>(float or tuple)<br>(optional) How many seconds to wait for the server to send data before giving up, as a float, or a (connect timeout, read timeout) tuple.</p>
 </blockquote>
 <p>设定超时时间,以s为单位</p>
-<pre><code>&gt;&gt;&gt;r = requests.request(&apos;GET&apos;,&apos;http://python123.io/ws&apos;,timeout=10)
+<pre><code>&gt;&gt;&gt;r = requests.request(&#39;GET&#39;,&#39;http://python123.io/ws&#39;,timeout=10)
 </code></pre><p><br><br> <br></p>
 <p><strong>allow_redirects</strong></p>
 <blockquote>
@@ -327,9 +327,9 @@
 <blockquote>
 <p>(optional) Dictionary mapping protocol to the URL of the proxy.<br>字典类型,设定访问代理服务器,可以增加登录认证</p>
 </blockquote>
-<pre><code>&gt;&gt;&gt;pxs ={&apos;http&apos;:&apos;heep://user:pass@10.10.10.1:1234&apos;
-          &apos;https&apos;:&apos;https:10.10.10.1:4321&apos;}
-&gt;&gt;&gt;r = requests.request(&apos;GET&apos;,&apos;http://python123.io/ws&apos;,proxies = pxs)
+<pre><code>&gt;&gt;&gt;pxs ={&#39;http&#39;:&#39;heep://user:pass@10.10.10.1:1234&#39;
+          &#39;https&#39;:&#39;https:10.10.10.1:4321&#39;}
+&gt;&gt;&gt;r = requests.request(&#39;GET&#39;,&#39;http://python123.io/ws&#39;,proxies = pxs)
 </code></pre><p>PS:你也可以通过环境变量 HTTP_PROXY 和 HTTPS_PROXY 来配置代理。</p>
 <pre><code>$ export HTTP_PROXY=&quot;http://10.10.1.10:3128&quot;
 $ export HTTPS_PROXY=&quot;http://10.10.1.10:1080&quot;

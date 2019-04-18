@@ -6,18 +6,18 @@
   <meta name="keywords" content>
   <meta name="description" content="whyswonderland">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="Response对象，包含了服务器对HTTP请求的响应。   这是一份机译+人工编辑的官方文档 * 标出的属性是初学者应该了解掌握的(个人认为)   *apparent_encoding The apparent encoding, provided by the chardet library.r.apparent_encoding   从内容中分析的相应内容的编码方式 r.encoding=">
+<meta name="description" content="Requests 所有的功能都可以通过以下 7 个方法访问。它们全部都会返回一个 Response 对象的实例。   1.1 requests.request(method, url, **kwargs) Constructs and sends a Request.  1.1.1选填参数:method  method for the new Request object.请求方式,对应http">
 <meta name="keywords" content="python,requests,爬虫">
 <meta property="og:type" content="article">
-<meta property="og:title" content="requests_Response对象的属性文档">
-<meta property="og:url" content="http://yoursite.com/2018/04/14/requsets_response/index.html">
+<meta property="og:title" content="requests主要接口">
+<meta property="og:url" content="http://yoursite.com/2018/04/14/requests_requests/index.html">
 <meta property="og:site_name" content="whyswonderland">
-<meta property="og:description" content="Response对象，包含了服务器对HTTP请求的响应。   这是一份机译+人工编辑的官方文档 * 标出的属性是初学者应该了解掌握的(个人认为)   *apparent_encoding The apparent encoding, provided by the chardet library.r.apparent_encoding   从内容中分析的相应内容的编码方式 r.encoding=">
+<meta property="og:description" content="Requests 所有的功能都可以通过以下 7 个方法访问。它们全部都会返回一个 Response 对象的实例。   1.1 requests.request(method, url, **kwargs) Constructs and sends a Request.  1.1.1选填参数:method  method for the new Request object.请求方式,对应http">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-08T11:18:58.000Z">
+<meta property="og:updated_time" content="2018-06-08T11:19:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="requests_Response对象的属性文档">
-<meta name="twitter:description" content="Response对象，包含了服务器对HTTP请求的响应。   这是一份机译+人工编辑的官方文档 * 标出的属性是初学者应该了解掌握的(个人认为)   *apparent_encoding The apparent encoding, provided by the chardet library.r.apparent_encoding   从内容中分析的相应内容的编码方式 r.encoding=">
+<meta name="twitter:title" content="requests主要接口">
+<meta name="twitter:description" content="Requests 所有的功能都可以通过以下 7 个方法访问。它们全部都会返回一个 Response 对象的实例。   1.1 requests.request(method, url, **kwargs) Constructs and sends a Request.  1.1.1选填参数:method  method for the new Request object.请求方式,对应http">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -153,13 +153,13 @@
     
     <nav id="title-list-nav">
         
-        <a class="数据获取 " href="/2018/04/14/requsets_response/" data-tag="python,requests,爬虫" data-author>
-            <span class="post-title" title="requests_Response对象的属性文档">requests_Response对象的属性文档</span>
+        <a class="数据获取 " href="/2018/04/14/requests_requests/" data-tag="python,requests,爬虫" data-author>
+            <span class="post-title" title="requests主要接口">requests主要接口</span>
             <span class="post-date" title="2018-04-14 23:40:01">2018/04/14</span>
         </a>
         
-        <a class="数据获取 " href="/2018/04/14/requests_requests/" data-tag="python,requests,爬虫" data-author>
-            <span class="post-title" title="requests主要接口">requests主要接口</span>
+        <a class="数据获取 " href="/2018/04/14/requsets_response/" data-tag="python,requests,爬虫" data-author>
+            <span class="post-title" title="requests_Response对象的属性文档">requests_Response对象的属性文档</span>
             <span class="post-date" title="2018-04-14 23:40:01">2018/04/14</span>
         </a>
         
@@ -197,21 +197,16 @@
 </style>
 </div>
             <h2 id="关于此博客"><a href="#关于此博客" class="headerlink" title="关于此博客"></a>关于此博客</h2><ul>
-<li>我的 <strong>数据分析</strong>,<strong>机器学习</strong>,<strong>算法</strong>的学习记录</li>
-<li>以<strong>python</strong>和<strong>r</strong>作为主力语言,偶尔写下<strong>matlab</strong>和<strong>sas</strong>版本</li>
+<li>我的 <strong>数据分析</strong>,<strong>机器学习</strong>的学习记录</li>
+<li>偶尔会有奇怪东西？</li>
 </ul>
 <h2 id="关于博主"><a href="#关于博主" class="headerlink" title="关于博主"></a>关于博主</h2><ul>
-<li>名字简写why,游戏常用id老腰精</li>
+<li><strong>称呼</strong> why</li>
 <li><strong>QQ</strong>670997051 </li>
 <li><strong>Wechat</strong> why670997051</li>
-<li>双非一本统计学在读</li>
-<li>没有照片</li>
 </ul>
 <h2 id="一些废话"><a href="#一些废话" class="headerlink" title="一些废话"></a>一些废话</h2><ul>
 <li>基于没有人看,懒得做导航页面,请到左边目录栏自助服务,点击Tags按钮可以按标签分类搜索</li>
-<li>好想拿一次kaggle的top5%</li>
-<li>假期要做个TensorFlow的图像项目</li>
-<li>好想买个GPU跑程序</li>
 </ul>
 
         </article>

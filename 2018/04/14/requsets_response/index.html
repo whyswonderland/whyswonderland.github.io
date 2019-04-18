@@ -6,18 +6,18 @@
   <meta name="keywords" content=" python , requests , 爬虫 ">
   <meta name="description" content="requests_Response对象的属性文档 | whyswonderland">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="Response对象，包含了服务器对HTTP请求的响应。   这是一份机译+人工编辑的官方文档 * 标出的属性是初学者应该了解掌握的(个人认为)   *apparent_encoding The apparent encoding, provided by the chardet library.r.apparent_encoding   从内容中分析的相应内容的编码方式 r.encoding=">
+<meta name="description" content="Requests 所有的功能都可以通过以下 7 个方法访问。它们全部都会返回一个 Response 对象的实例。   1.1 requests.request(method, url, **kwargs) Constructs and sends a Request.  1.1.1选填参数:method  method for the new Request object.请求方式,对应http">
 <meta name="keywords" content="python,requests,爬虫">
 <meta property="og:type" content="article">
-<meta property="og:title" content="requests_Response对象的属性文档">
-<meta property="og:url" content="http://yoursite.com/2018/04/14/requsets_response/index.html">
+<meta property="og:title" content="requests主要接口">
+<meta property="og:url" content="http://yoursite.com/2018/04/14/requests_requests/index.html">
 <meta property="og:site_name" content="whyswonderland">
-<meta property="og:description" content="Response对象，包含了服务器对HTTP请求的响应。   这是一份机译+人工编辑的官方文档 * 标出的属性是初学者应该了解掌握的(个人认为)   *apparent_encoding The apparent encoding, provided by the chardet library.r.apparent_encoding   从内容中分析的相应内容的编码方式 r.encoding=">
+<meta property="og:description" content="Requests 所有的功能都可以通过以下 7 个方法访问。它们全部都会返回一个 Response 对象的实例。   1.1 requests.request(method, url, **kwargs) Constructs and sends a Request.  1.1.1选填参数:method  method for the new Request object.请求方式,对应http">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-08T11:18:58.000Z">
+<meta property="og:updated_time" content="2018-06-08T11:19:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="requests_Response对象的属性文档">
-<meta name="twitter:description" content="Response对象，包含了服务器对HTTP请求的响应。   这是一份机译+人工编辑的官方文档 * 标出的属性是初学者应该了解掌握的(个人认为)   *apparent_encoding The apparent encoding, provided by the chardet library.r.apparent_encoding   从内容中分析的相应内容的编码方式 r.encoding=">
+<meta name="twitter:title" content="requests主要接口">
+<meta name="twitter:description" content="Requests 所有的功能都可以通过以下 7 个方法访问。它们全部都会返回一个 Response 对象的实例。   1.1 requests.request(method, url, **kwargs) Constructs and sends a Request.  1.1.1选填参数:method  method for the new Request object.请求方式,对应http">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -153,13 +153,13 @@
     
     <nav id="title-list-nav">
         
-        <a class="数据获取 " href="/2018/04/14/requsets_response/" data-tag="python,requests,爬虫" data-author>
-            <span class="post-title" title="requests_Response对象的属性文档">requests_Response对象的属性文档</span>
+        <a class="数据获取 " href="/2018/04/14/requests_requests/" data-tag="python,requests,爬虫" data-author>
+            <span class="post-title" title="requests主要接口">requests主要接口</span>
             <span class="post-date" title="2018-04-14 23:40:01">2018/04/14</span>
         </a>
         
-        <a class="数据获取 " href="/2018/04/14/requests_requests/" data-tag="python,requests,爬虫" data-author>
-            <span class="post-title" title="requests主要接口">requests主要接口</span>
+        <a class="数据获取 " href="/2018/04/14/requsets_response/" data-tag="python,requests,爬虫" data-author>
+            <span class="post-title" title="requests_Response对象的属性文档">requests_Response对象的属性文档</span>
             <span class="post-date" title="2018-04-14 23:40:01">2018/04/14</span>
         </a>
         
@@ -367,7 +367,7 @@
 <p>Integer Code of responded HTTP Status, e.g. 404 or 200.</p>
 </blockquote>
 <p>整数响应的HTTP状态代码，例如 404或200。</p>
-<pre><code>&gt;&gt;&gt; r = requests.get(&apos;http://httpbin.org/get&apos;)
+<pre><code>&gt;&gt;&gt; r = requests.get(&#39;http://httpbin.org/get&#39;)
 &gt;&gt;&gt; r.status_code
 200
 &gt;&gt;&gt; r.status_code == requests.codes.ok
