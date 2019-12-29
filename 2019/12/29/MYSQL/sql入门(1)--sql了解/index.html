@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>量化分析文章索引 | whyswonderland</title>
-  <meta name="keywords" content=" 目录 , 量化分析 ">
-  <meta name="description" content="量化分析文章索引 | whyswonderland">
+  <title>sql入门(1)--sql了解 | whyswonderland</title>
+  <meta name="keywords" content=" SQL , 数据库 ">
+  <meta name="description" content="sql入门(1)--sql了解 | whyswonderland">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="SQL入门(1)–SQL了解 SQL入门(2)–表的创建 SQL入门(3)–SELECT语句基础">
 <meta name="keywords" content="SQL,数据库">
@@ -280,35 +280,33 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Quantitative-Analysis/Quantitative-Analysis_Catalogue" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-MYSQL/sql入门(1)--sql了解" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">量化分析文章索引</h1>
+        <h1 class="article-title">sql入门(1)--sql了解</h1>
     
     <div class="article-meta">
-        
-        <span class="top"><a href="javascript:">置顶</a></span>
         
         
         
         <span class="book">
             
-            <a href="javascript:" data-rel="量化分析">量化分析</a>
+            <a href="javascript:" data-rel="SQL">SQL</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color3">目录</a>
+            <a href="javascript:" class="color4">SQL</a>
             
-            <a href="javascript:" class="color5">量化分析</a>
+            <a href="javascript:" class="color4">数据库</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-12-29 20:57:06">2019-05-03 15:56</time>
+        创建时间:<time class="date" title="更新时间: 2019-12-29 18:22:07">2019-12-29 18:19</time>
         
     </div>
     <div class="article-meta">
@@ -319,7 +317,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SQL了解"><span class="toc-text">SQL了解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-SQL语句种类"><span class="toc-text">1 SQL语句种类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实际使用的SQL语句当中有90-属于DML-要以DML为中心学习"><span class="toc-text">实际使用的SQL语句当中有90%属于DML,要以DML为中心学习</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-SQL的基本书写规则"><span class="toc-text">2 SQL的基本书写规则</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -334,7 +332,48 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>还没开坑</p>
+        <h1 id="SQL了解"><a href="#SQL了解" class="headerlink" title="SQL了解"></a>SQL了解</h1><h2 id="1-SQL语句种类"><a href="#1-SQL语句种类" class="headerlink" title="1 SQL语句种类"></a>1 SQL语句种类</h2><p>SQL语言分为DDL,DML,DCL三类</p>
+<ul>
+<li><strong>DDL</strong><br>DDL(Data Definition Language,数据定义语言)用来创建或者删除存储数据用的数据库以及数据库中的表等对象.DDl包含以下几种指令</li>
+</ul>
+<ol>
+<li><strong>CREATE</strong>: 创建数据库和表等对象</li>
+<li><strong>DROP</strong>: 删除数据库和表等对象</li>
+<li><strong>ALTER</strong>: 修改数据库和表等对象的结构</li>
+</ol>
+<hr>
+<ul>
+<li><strong>DML</strong><br>DML(Data Manipulation Language,数据操纵语言)用来查询或者变更表中的记录.DML包含以下指令</li>
+</ul>
+<ol>
+<li><strong>SELECT</strong>: 查询表中的数据</li>
+<li><strong>INSERT</strong>: 向表中插入新数据</li>
+<li><strong>UPDATE</strong>: 更新表中的数据</li>
+<li><strong>DELETE</strong>: 删除表中的数据</li>
+</ol>
+<hr>
+<ul>
+<li><strong>DCL</strong><br>DCL(Data Control Language,数据控制语言)用来确认或取消对数据库中的数据进行的变更.除此之外还可以对用户是否有权限操作数据库中的对象(数据库表等)进行设定.DCL包含以下几种指令</li>
+</ul>
+<ol>
+<li><strong>COMMIT</strong>: 确认对数据库中的数据进行变更</li>
+<li><strong>ROLLBACK</strong>: 取消对数据库中数据进行变更</li>
+<li><strong>GRANT</strong>: 赋予用户操作权限</li>
+<li><strong>REVOKE</strong>: 取消用户操作权限</li>
+</ol>
+<blockquote>
+<p>Note:</p>
+</blockquote>
+<h2 id="实际使用的SQL语句当中有90-属于DML-要以DML为中心学习"><a href="#实际使用的SQL语句当中有90-属于DML-要以DML为中心学习" class="headerlink" title="实际使用的SQL语句当中有90%属于DML,要以DML为中心学习"></a>实际使用的SQL语句当中有90%属于DML,要以DML为中心学习</h2><hr>
+<h2 id="2-SQL的基本书写规则"><a href="#2-SQL的基本书写规则" class="headerlink" title="2 SQL的基本书写规则"></a>2 SQL的基本书写规则</h2><blockquote>
+<p>Note:</p>
+<ol>
+<li>SQL语句以<strong>分号(\; )</strong> 结尾</li>
+<li>SQL语句不区分关键字的大小写字符串和日期常数需要使用 <strong>单引号(‘ ‘)</strong> 括起来</li>
+<li>数字常数无须加注单引号,直接书写数字即可</li>
+<li>单词之间需要使用半角空格或者换行符进行分隔</li>
+</ol>
+</blockquote>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在邮件至 670997051@qq.com </span>
@@ -348,12 +387,12 @@
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>量化分析文章索引</p>
+    <p><span>文章标题:</span>sql入门(1)--sql了解</p>
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="why">why</a></p>
-    <p><span>发布时间:</span>2019-05-03, 15:56:11</p>
-    <p><span>最后更新:</span>2019-12-29, 20:57:06</p>
-    <span>原始链接:</span><a class="post-url" href="/2019/05/03/Quantitative-Analysis/Quantitative-Analysis_Catalogue/" title="量化分析文章索引">http://yoursite.com/2019/05/03/Quantitative-Analysis/Quantitative-Analysis_Catalogue/</a>
+    <p><span>发布时间:</span>2019-12-29, 18:19:44</p>
+    <p><span>最后更新:</span>2019-12-29, 18:22:07</p>
+    <span>原始链接:</span><a class="post-url" href="/2019/12/29/MYSQL/sql入门(1)--sql了解/" title="sql入门(1)--sql了解">http://yoursite.com/2019/12/29/MYSQL/sql入门(1)--sql了解/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

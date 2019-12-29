@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>量化分析文章索引 | whyswonderland</title>
-  <meta name="keywords" content=" 目录 , 量化分析 ">
-  <meta name="description" content="量化分析文章索引 | whyswonderland">
+  <title>sql入门(2)--表的创建 | whyswonderland</title>
+  <meta name="keywords" content=" SQL , 数据库 ">
+  <meta name="description" content="sql入门(2)--表的创建 | whyswonderland">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="SQL入门(1)–SQL了解 SQL入门(2)–表的创建 SQL入门(3)–SELECT语句基础">
 <meta name="keywords" content="SQL,数据库">
@@ -280,35 +280,33 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Quantitative-Analysis/Quantitative-Analysis_Catalogue" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-MYSQL/sql入门(2)--表的创建" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">量化分析文章索引</h1>
+        <h1 class="article-title">sql入门(2)--表的创建</h1>
     
     <div class="article-meta">
-        
-        <span class="top"><a href="javascript:">置顶</a></span>
         
         
         
         <span class="book">
             
-            <a href="javascript:" data-rel="量化分析">量化分析</a>
+            <a href="javascript:" data-rel="SQL">SQL</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color3">目录</a>
+            <a href="javascript:" class="color4">SQL</a>
             
-            <a href="javascript:" class="color5">量化分析</a>
+            <a href="javascript:" class="color4">数据库</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-12-29 20:57:06">2019-05-03 15:56</time>
+        创建时间:<time class="date" title="更新时间: 2019-12-29 18:22:32">2019-12-29 18:19</time>
         
     </div>
     <div class="article-meta">
@@ -319,7 +317,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#数据库与表的创建"><span class="toc-text">数据库与表的创建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-创建数据库"><span class="toc-text">1 创建数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-表的创建"><span class="toc-text">2 表的创建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-命名规则"><span class="toc-text">2.1 命名规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-数据类型的指定"><span class="toc-text">2.2 数据类型的指定</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-约束设置"><span class="toc-text">2.3 约束设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-表的更新"><span class="toc-text">4 表的更新</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -334,8 +332,124 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>还没开坑</p>
+        <h1 id="数据库与表的创建"><a href="#数据库与表的创建" class="headerlink" title="数据库与表的创建"></a>数据库与表的创建</h1><hr>
+<h2 id="1-创建数据库"><a href="#1-创建数据库" class="headerlink" title="1 创建数据库"></a>1 创建数据库</h2><pre><code>CREATE DATABASE &lt;数据库名称&gt;;
+</code></pre><p> 使用数据库(mysql)</p>
+<pre><code>USE &lt;数据库&gt;
+</code></pre><hr>
+<h2 id="2-表的创建"><a href="#2-表的创建" class="headerlink" title="2 表的创建"></a>2 表的创建</h2><pre><code>CREATE TABLE &lt;表名&gt;
+(&lt;列名&gt; &lt;数据类型 &lt;该列所需约束&gt;,
+ &lt;列名&gt; &lt;数据类型 &lt;该列所需约束&gt;,
+ &lt;列名&gt; &lt;数据类型 &lt;该列所需约束&gt;,
+ ....
+ &lt;该表的约束1&gt;,&lt;该表的约束2&gt;,....)
+</code></pre><h3 id="2-1-命名规则"><a href="#2-1-命名规则" class="headerlink" title="2.1 命名规则"></a>2.1 命名规则</h3><ol>
+<li>只能用半角英文字母,数字,下划线(_)作为数据库和表,列的名字</li>
+<li>名称必须以半角英文字母作为开头</li>
+<li>名字不可以重复.即同一个数据库不可以创建两个相同名称的表,在同一个表也不能创建两个名称相同的列</li>
+</ol>
+<h3 id="2-2-数据类型的指定"><a href="#2-2-数据类型的指定" class="headerlink" title="2.2 数据类型的指定"></a>2.2 数据类型的指定</h3><p>四大基本类型: <strong>INTEGER,CHAR,VARCHAR,DATE</strong></p>
+<blockquote>
+<ol>
+<li><strong>INTEGER</strong><br>用来指定存储整数的列的数据类型(数字型),不能存储小数</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li><strong>CHAR</strong><br>CHAR是CHARACTER(字符)的缩写,是用来指定存储字符串的列的数据类型(字符型).可以用CHAR(10),CHAR(100)这样指定存储的字符串的最大长度.当列中的字符串长度达不到最大长度的时候,使用半角空格进行补足.<br>输入字符串数据时候要如 <strong>‘abc’</strong> 用引号括起<br>虽然sql不区分英文大小写,但存储的字符串区分大小写 则’abc’与’ABc’不等价</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li><strong>VARCHAR</strong><br>同CHAR类型一样,VARCHAR型也是用来指定存储字符串的列的数据类型.但当列中的字符串长度达不到最大长度的时候,<strong>不会使用半角空格进行补足</strong>.</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="4">
+<li><strong>DATE</strong><br>用来指定存储日期(年月日)的列的数据类型</li>
+</ol>
+</blockquote>
+<h2 id="2-3-约束设置"><a href="#2-3-约束设置" class="headerlink" title="2.3 约束设置"></a>2.3 约束设置</h2><p>约束是除了数据类型之外,对列中存储的数据进行限制或者追加条件的功能,常用的有:</p>
+<ul>
+<li><strong>NOT BULL</strong></li>
+<li><strong>UNIQUE</strong></li>
+<li><strong>PRIMARY KEY</strong></li>
+<li><strong>FOREIGN KEY</strong></li>
+<li><strong>CHECK</strong></li>
+<li><strong>DEFAULT</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><strong>NOT NULL</strong><br>NOT NULL 约束强制列不接受 NULL 值。<br>NOT NULL 约束强制字段始终包含值。这意味着，如果不向字段添加值，就无法插入新记录或者更新记录。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>UNIQUE</strong><br>UNIQUE 约束唯一标识数据库表中的每条记录。<br>UNIQUE 和 PRIMARY KEY 约束均为列或列集合提供了唯一性的保证。<br>PRIMARY KEY 拥有自动定义的 UNIQUE 约束。<br>请注意，每个表可以有多个 UNIQUE 约束，但是每个表只能有一个 PRIMARY KEY 约束。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>PRIMARY KEY</strong><br>PRIMARY KEY 约束唯一标识数据库表中的每条记录。<br>主键必须包含唯一的值。<br>主键列不能包含 NULL 值。<br>每个表都应该有一个主键，并且每个表只能有一个主键。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>FOREIGN KEY</strong><br>一个表中的 FOREIGN KEY 指向另一个表中的 PRIMARY KEY。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>CHECK</strong><br>CHECK 约束用于限制列中的值的范围。<br>如果对单个列定义 CHECK 约束，那么该列只允许特定的值。<br>如果对一个表定义 CHECK 约束，那么此约束会在特定的列中对值进行限制</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>DEFAULT</strong><br>DEFAULT 约束用于向列中插入默认值。<br>如果没有规定其他的值，那么会将默认值添加到所有的新记录。</li>
+</ul>
+</blockquote>
+<p>##3 表的删除</p>
+<pre><code>DROP TABLE &lt;表名&gt;;
+</code></pre><p><strong>被删除的表是无法恢复的!!谨慎使用</strong></p>
+<h3 id="4-表的更新"><a href="#4-表的更新" class="headerlink" title="4 表的更新"></a>4 表的更新</h3><p><strong>4.1 添加列</strong></p>
+<pre><code>ALTER TABLE &lt;表名&gt; ADD COLUMN &lt;列的定义&gt;;
+</code></pre><p><strong>4.2 删除列</strong></p>
+<pre><code>ALTER TABLE &lt;表名&gt; DROP COLUMN &lt;列名&gt;;
+</code></pre><p>示例</p>
+<pre><code>cd c:\\mysql\bin
+mysql -u root -p  #登录本地数据库
 
+CREATE DATABASE shop;  #创建shop数据库
+USE shop  #使用shop数据库
+
+#建立product表
+CREATE TABLE product
+(
+  product_id CHAR(4) NOT NULL,
+  product_name VARCHAR(100) NOT NULL,
+  product_type VARCHAR(32) NOT NULL,
+  sale_price INTEGER,
+  purchase_price INTEGER,
+  regist_data DATE,
+  PRIMARY KEY (product_id)
+);
+
+#在product表中加入/删去product_name_pinyin列
+ALTER TABLE product ADD COLUMN product_name_pinyin VARCHAR(100);
+ALTER TABLE product DROP COLUMN product_name_pinyin;
+
+#在表product填写数据
+START TRANSACTION;
+INSERT INTO Product VALUES (&#39;0001&#39;, &#39;T恤&#39; ,&#39;衣服&#39;, 1000, 500, &#39;2009-09-20&#39;);
+INSERT INTO Product VALUES (&#39;0002&#39;, &#39;打孔器&#39;, &#39;办公用品&#39;, 500, 320, &#39;2009-09-11&#39;);
+INSERT INTO Product VALUES (&#39;0003&#39;, &#39;运动T恤&#39;, &#39;衣服&#39;, 4000, 2800, NULL);
+INSERT INTO Product VALUES (&#39;0004&#39;, &#39;菜刀&#39;, &#39;厨房用具&#39;, 3000, 2800, &#39;2009-09-20&#39;);
+INSERT INTO Product VALUES (&#39;0005&#39;, &#39;高压锅&#39;, &#39;厨房用具&#39;, 6800, 5000, &#39;2009-01-15&#39;);
+INSERT INTO Product VALUES (&#39;0006&#39;, &#39;叉子&#39;, &#39;厨房用具&#39;, 500, NULL, &#39;2009-09-20&#39;);
+INSERT INTO Product VALUES (&#39;0007&#39;, &#39;擦菜板&#39;, &#39;厨房用具&#39;, 880, 790, &#39;2008-04-28&#39;);
+INSERT INTO Product VALUES (&#39;0008&#39;, &#39;圆珠笔&#39;, &#39;办公用品&#39;, 100, NULL, &#39;2009-11-11&#39;);
+COMMIT;
+</code></pre>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在邮件至 670997051@qq.com </span>
     </div>
@@ -348,12 +462,12 @@
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>量化分析文章索引</p>
+    <p><span>文章标题:</span>sql入门(2)--表的创建</p>
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="why">why</a></p>
-    <p><span>发布时间:</span>2019-05-03, 15:56:11</p>
-    <p><span>最后更新:</span>2019-12-29, 20:57:06</p>
-    <span>原始链接:</span><a class="post-url" href="/2019/05/03/Quantitative-Analysis/Quantitative-Analysis_Catalogue/" title="量化分析文章索引">http://yoursite.com/2019/05/03/Quantitative-Analysis/Quantitative-Analysis_Catalogue/</a>
+    <p><span>发布时间:</span>2019-12-29, 18:19:44</p>
+    <p><span>最后更新:</span>2019-12-29, 18:22:32</p>
+    <span>原始链接:</span><a class="post-url" href="/2019/12/29/MYSQL/sql入门(2)--表的创建/" title="sql入门(2)--表的创建">http://yoursite.com/2019/12/29/MYSQL/sql入门(2)--表的创建/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
