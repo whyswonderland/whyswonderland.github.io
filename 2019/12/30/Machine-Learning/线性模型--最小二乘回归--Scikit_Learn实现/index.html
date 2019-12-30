@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>量化分析文章索引 | whyswonderland</title>
-  <meta name="keywords" content=" 目录 , 量化分析 ">
-  <meta name="description" content="量化分析文章索引 | whyswonderland">
+  <title>线性模型--最小二乘回归--Scikit_Learn实现 | whyswonderland</title>
+  <meta name="keywords" content=" 机器学习 , 线性模型 , Scikit-Learn ">
+  <meta name="description" content="线性模型--最小二乘回归--Scikit_Learn实现 | whyswonderland">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="SQL入门(1)–SQL了解 SQL入门(2)–表的创建 SQL入门(3)–SELECT语句基础">
 <meta name="keywords" content="SQL,数据库">
@@ -298,35 +298,35 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Quantitative-Analysis/Quantitative-Analysis_Catalogue" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Machine-Learning/线性模型--最小二乘回归--Scikit_Learn实现" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">量化分析文章索引</h1>
+        <h1 class="article-title">线性模型--最小二乘回归--Scikit_Learn实现</h1>
     
     <div class="article-meta">
-        
-        <span class="top"><a href="javascript:">置顶</a></span>
         
         
         
         <span class="book">
             
-            <a href="javascript:" data-rel="量化分析">量化分析</a>
+            <a href="javascript:" data-rel="机器学习">机器学习</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color3">目录</a>
+            <a href="javascript:" class="color5">机器学习</a>
             
-            <a href="javascript:" class="color5">量化分析</a>
+            <a href="javascript:" class="color5">线性模型</a>
+            
+            <a href="javascript:" class="color3">Scikit-Learn</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-12-30 17:47:48">2019-05-03 15:56</time>
+        创建时间:<time class="date" title="更新时间: 2019-12-30 17:44:30">2019-12-30 17:40</time>
         
     </div>
     <div class="article-meta">
@@ -337,7 +337,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-线性回归模型"><span class="toc-text">1 线性回归模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-核心代码"><span class="toc-text">2  核心代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Example"><span class="toc-text">3 Example</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-sklearn-linear-model详解"><span class="toc-text">4 sklearn.linear_model详解</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -352,7 +352,143 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>还没开坑</p>
+        <p>#线性模型–最小二乘回归–Scikit-Learn实现</p>
+<h2 id="1-线性回归模型"><a href="#1-线性回归模型" class="headerlink" title="1 线性回归模型"></a>1 线性回归模型</h2><p>$$ \mathrm{y}_{i}=\omega_{1} x_{i 1}+\omega_{2} x_{i 2}+\ldots \omega_{d} x_{i d}+b $$</p>
+<hr>
+<h2 id="2-核心代码"><a href="#2-核心代码" class="headerlink" title="2  核心代码"></a>2  核心代码</h2><pre><code class="python">from sklearn import linear_model
+
+LR = linear_model.LinearRegression() #设定模型
+LR.fit(X_train, y_train) #拟合模型
+y_pred = LR.predict(X_test) #模型预测
+
+LR.coef_ #线性模型系数
+LR.intercept_ #线性模型截距项
+LR.rank_ #训练集X矩阵的秩
+LR.singular_ #X的奇异值
+
+LR.score(X_train, y_train) #模型得分
+LR.get_params() #模型参数
+
+
+</code></pre>
+<hr>
+<h2 id="3-Example"><a href="#3-Example" class="headerlink" title="3 Example"></a>3 Example</h2><pre><code class="python">import matplotlib.pyplot as plt
+import numpy as np
+from sklearn import datasets, linear_model
+</code></pre>
+<pre><code class="python">from sklearn.metrics import mean_squared_error, r2_score
+
+#从datasets中导入diabetes数据
+
+# Load the diabetes dataset
+diabetes_X, diabetes_y = datasets.load_diabetes(return_X_y=True)
+
+# Use only one feature
+diabetes_X = diabetes_X[:, np.newaxis, 2]
+
+# Split the data into training/testing sets
+diabetes_X_train = diabetes_X[:-20]
+diabetes_X_test = diabetes_X[-20:]
+
+# Split the targets into training/testing sets
+diabetes_y_train = diabetes_y[:-20]
+diabetes_y_test = diabetes_y[-20:]
+</code></pre>
+<pre><code class="python"># Create linear regression object
+regr = linear_model.LinearRegression()
+
+# Train the model using the training sets
+regr.fit(diabetes_X_train, diabetes_y_train)
+
+# Make predictions using the testing set
+diabetes_y_pred = regr.predict(diabetes_X_test)
+
+# The coefficients
+print(&#39;Coefficients: \n&#39;, regr.coef_)
+# The Intercept
+print(&#39;Intercept: \n&#39;, regr.intercept_)
+# The mean squared error
+print(&#39;Mean squared error: %.2f&#39;
+      % mean_squared_error(diabetes_y_test, diabetes_y_pred))
+# regr.score
+print(&#39;Coefficient of training: %.2f&#39;
+      % regr.score(diabetes_X_train, diabetes_y_train))
+# The coefficient of determination: 1 is perfect prediction
+print(&#39;Coefficient of determination: %.2f&#39;
+      % r2_score(diabetes_y_test, diabetes_y_pred))
+# regr.get_params
+print(&#39;Parameters: \n&#39;, regr.get_params())
+</code></pre>
+<pre><code>Coefficients: 
+ [938.23786125]
+Intercept: 
+ 152.91886182616167
+Mean squared error: 2548.07
+Coefficient of training: 0.34
+Coefficient of determination: 0.47
+Parameters: 
+ {&#39;copy_X&#39;: True, &#39;fit_intercept&#39;: True, &#39;n_jobs&#39;: None, &#39;normalize&#39;: False}
+</code></pre><pre><code class="python"># Plot outputs
+plt.scatter(diabetes_X_test, diabetes_y_test,  color=&#39;black&#39;)
+plt.plot(diabetes_X_test, diabetes_y_pred, color=&#39;blue&#39;, linewidth=3)
+
+plt.xticks(())
+plt.yticks(())
+
+plt.show()
+</code></pre>
+<p><img src="https://cdn.mathpix.com/snip/images/NnwGlWW21rIyRWxM6t6TZ0JnGlQE5CUvKe0Y-RocKYM.original.fullsize.png" alt></p>
+<hr>
+<h2 id="4-sklearn-linear-model详解"><a href="#4-sklearn-linear-model详解" class="headerlink" title="4 sklearn.linear_model详解"></a>4 sklearn.linear_model详解</h2><pre><code>class sklearn.linear_model.LinearRegression(fit_intercept=True, normalize=False, copy_X=True, n_jobs=None)
+</code></pre><ul>
+<li>Parameters<blockquote>
+<p><strong>fit_intercept</strong> : bool, optional, default True<br>Whether to calculate the intercept for this model. If set to False, no intercept will be used in calculations (i.e. data is expected to be centered).<br>是否拟合截距项</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p><strong>normalize bool</strong> : optional, default False<br>This parameter is ignored when fit_intercept is set to False. If True, the regressors X will be normalized before regression by subtracting the mean and dividing by the l2-norm. If you wish to standardize, please use sklearn.preprocessing.StandardScaler before calling fit on an estimator with normalize=False.<br>是否拟合前进行数据标准化</p>
+</blockquote>
+<blockquote>
+<p><strong>copy_X</strong> : bool , optional, default True<br>If True, X will be copied; else, it may be overwritten.<br>如果为True，将复制X；否则为X。 否则，它可能会被覆盖。</p>
+</blockquote>
+<blockquote>
+<p><strong>n_jobs</strong> : int or None, optional (default=None)<br>The number of jobs to use for the computation. This will only provide speedup for n_targets &gt; 1 and sufficient large problems. None means 1 unless in a joblib.parallel_backend context. -1 means using all processors. See Glossary for more details.<br>用于计算的处理器数。 这只会为n_targets&gt; 1和足够大的问题提供加速。 除非在joblib.parallel_backend上下文中，否则None表示1。 -1表示使用所有处理器。</p>
+</blockquote>
+<p><br></p>
+<ul>
+<li>Attributes<blockquote>
+<p><strong>coef_</strong> : array of shape (n_features, ) or (n_targets, n_features)<br>Estimated coefficients for the linear regression problem. If multiple targets are passed during the fit (y 2D), this is a 2D array of shape (n_targets, n_features), while if only one target is passed, this is a 1D array of length n_features.<br>线性回归问题的估计系数</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p><strong>rank_</strong> ; int<br>Rank of matrix X. Only available when X is dense.<br>矩阵X的秩,仅当X密集时可用</p>
+</blockquote>
+<blockquote>
+<p><strong>singular_</strong> : array of shape (min(X, y),)<br>Singular values of X. Only available when X is dense.<br>X的奇异值,仅当X密集时可用</p>
+</blockquote>
+<blockquote>
+<p><strong>intercept_</strong> float or array of shape of (n_targets,)<br>Independent term in the linear model. Set to 0.0 if fit_intercept = False.<br>线性模型中的截距项</p>
+</blockquote>
+<ul>
+<li>Methods</li>
+</ul>
+<blockquote>
+<p>fit(self, X, y[, sample_weight])<br>Fit linear model.<br>拟合模型</p>
+</blockquote>
+<blockquote>
+<p> get_params(self[, deep])<br>Get parameters for this estimator.<br>获得模型参数</p>
+</blockquote>
+<blockquote>
+<p>predict(self, X)<br>Predict using the linear model.<br>利用训练模型预测</p>
+</blockquote>
+<blockquote>
+<p>score(self, X, y[, sample_weight])<br>Return the coefficient of determination R^2 of the prediction.<br>模型得分,取值范围[0,1],1最好</p>
+</blockquote>
+<blockquote>
+<p>set_params(self, **params)<br>Set the parameters of this estimator.<br>为模型设定参数</p>
+</blockquote>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在邮件至 670997051@qq.com </span>
@@ -366,12 +502,12 @@
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>量化分析文章索引</p>
+    <p><span>文章标题:</span>线性模型--最小二乘回归--Scikit_Learn实现</p>
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="why">why</a></p>
-    <p><span>发布时间:</span>2019-05-03, 15:56:11</p>
-    <p><span>最后更新:</span>2019-12-30, 17:47:48</p>
-    <span>原始链接:</span><a class="post-url" href="/2019/05/03/Quantitative-Analysis/Quantitative-Analysis_Catalogue/" title="量化分析文章索引">http://yoursite.com/2019/05/03/Quantitative-Analysis/Quantitative-Analysis_Catalogue/</a>
+    <p><span>发布时间:</span>2019-12-30, 17:40:48</p>
+    <p><span>最后更新:</span>2019-12-30, 17:44:30</p>
+    <span>原始链接:</span><a class="post-url" href="/2019/12/30/Machine-Learning/线性模型--最小二乘回归--Scikit_Learn实现/" title="线性模型--最小二乘回归--Scikit_Learn实现">http://yoursite.com/2019/12/30/Machine-Learning/线性模型--最小二乘回归--Scikit_Learn实现/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
