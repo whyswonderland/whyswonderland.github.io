@@ -230,6 +230,141 @@
     
     
     <entry>
+      <title>量化分析文章索引</title>
+      <link href="/2019/05/03/Quantitative-Analysis/Quantitative-Analysis_Catalogue/"/>
+      <url>/2019/05/03/Quantitative-Analysis/Quantitative-Analysis_Catalogue/</url>
+      
+        <content type="html"><![CDATA[<ul><li>还没开坑</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 量化分析 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 目录 </tag>
+            
+            <tag> 量化分析 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数据可视化文章索引</title>
+      <link href="/2019/05/03/Data-Visualization/Data-Visualization_Catalogue/"/>
+      <url>/2019/05/03/Data-Visualization/Data-Visualization_Catalogue/</url>
+      
+        <content type="html"><![CDATA[<ul><li>还没开坑</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据可视化 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 目录 </tag>
+            
+            <tag> 数据可视化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>时间序列文章索引</title>
+      <link href="/2019/05/03/Time-Series/Time-Series_Catalogue/"/>
+      <url>/2019/05/03/Time-Series/Time-Series_Catalogue/</url>
+      
+        <content type="html"><![CDATA[<ul><li>还没开坑</li></ul><ol><li><p>还没开坑</p></li><li><p>还没开坑</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 时间序列 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 目录 </tag>
+            
+            <tag> 时间序列 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>参数统计文章索引</title>
+      <link href="/2019/05/03/Parametric-Statistics/Parametric-Statistics_Catalogue/"/>
+      <url>/2019/05/03/Parametric-Statistics/Parametric-Statistics_Catalogue/</url>
+      
+        <content type="html"><![CDATA[<ul><li>还没开坑</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 参数统计 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 目录 </tag>
+            
+            <tag> 参数统计 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>非参数统计文章索引</title>
+      <link href="/2019/05/03/Nonparametric-Statistics/Nonparametric-Statistics_Catalogue/"/>
+      <url>/2019/05/03/Nonparametric-Statistics/Nonparametric-Statistics_Catalogue/</url>
+      
+        <content type="html"><![CDATA[<ul><li>还没开坑</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 非参数统计 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 目录 </tag>
+            
+            <tag> 非参数统计 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>机器学习文章索引</title>
       <link href="/2019/05/03/Machine-Learning/Machine-Learning_Catalogue/"/>
       <url>/2019/05/03/Machine-Learning/Machine-Learning_Catalogue/</url>
@@ -249,6 +384,33 @@
             <tag> 机器学习 </tag>
             
             <tag> 目录 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>回归分析文章索引</title>
+      <link href="/2019/05/03/Regression-Analysis/Regression-Analysis_Catalogue/"/>
+      <url>/2019/05/03/Regression-Analysis/Regression-Analysis_Catalogue/</url>
+      
+        <content type="html"><![CDATA[<ul><li>还没开坑</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 回归分析 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 目录 </tag>
+            
+            <tag> 回归分析 </tag>
             
         </tags>
       
