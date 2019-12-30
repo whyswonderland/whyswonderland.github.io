@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  <title>模型评估--泛化误差评估 | whyswonderland</title>
-  <meta name="keywords" content=" 机器学习 , 泛化误差 , 数据集划分 ">
-  <meta name="description" content="模型评估--泛化误差评估 | whyswonderland">
+  <title>sql入门(4)--算术运算符和比较运算符 | whyswonderland</title>
+  <meta name="keywords" content=" SQL , 数据库 , SELECT ">
+  <meta name="description" content="sql入门(4)--算术运算符和比较运算符 | whyswonderland">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="线性模型–最小二乘回归–数理推导 1 最小二乘线性回归模型$$ \mathrm{y}_{i}=\omega_{1} x_{i 1}+\omega_{2} x_{i 2}+\ldots \omega_{d} x_{i d}+b $$ 推导过程 参数说明  $$\hat{\omega}=(\omega ; b)=\left(\begin{array}{c}{\omega_{1}} \\{\omega_">
 <meta name="keywords" content="机器学习,线性模型,Scikit-Learn">
@@ -230,9 +230,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Machine-Learning/模型评估--数据集划分" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-MYSQL/sql入门(4)--算术运算符和比较运算符" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">模型评估--泛化误差评估</h1>
+        <h1 class="article-title">sql入门(4)--算术运算符和比较运算符</h1>
     
     <div class="article-meta">
         
@@ -240,25 +240,25 @@
         
         <span class="book">
             
-            <a href="javascript:" data-rel="机器学习">机器学习</a>
+            <a href="javascript:" data-rel="SQL">SQL</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color5">机器学习</a>
+            <a href="javascript:" class="color4">SQL</a>
             
-            <a href="javascript:" class="color5">泛化误差</a>
+            <a href="javascript:" class="color4">数据库</a>
             
-            <a href="javascript:" class="color1">数据集划分</a>
+            <a href="javascript:" class="color2">SELECT</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title="更新时间: 2019-12-30 22:54:53">2019-12-25 12:17</time>
+        创建时间:<time class="date" title="更新时间: 2019-12-31 00:31:04">2019-12-31 00:25</time>
         
     </div>
     <div class="article-meta">
@@ -269,7 +269,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#模型评估"><span class="toc-text">模型评估</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-误差"><span class="toc-text">1 误差</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-拟合效果"><span class="toc-text">2 拟合效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-泛化误差评估"><span class="toc-text">3 泛化误差评估</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-留出法-hold-out"><span class="toc-text">3.1 留出法(hold-out)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-交叉验证法-cross-validation"><span class="toc-text">3.2 交叉验证法(cross validation)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-自助法Bootstrap"><span class="toc-text">3.3 自助法Bootstrap</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-验证集"><span class="toc-text">4 验证集</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-算术运算符"><span class="toc-text">1 算术运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-比较运算符"><span class="toc-text">2 比较运算符</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -284,62 +284,147 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="模型评估"><a href="#模型评估" class="headerlink" title="模型评估"></a>模型评估</h1><h2 id="1-误差"><a href="#1-误差" class="headerlink" title="1 误差"></a>1 误差</h2><ul>
-<li><strong>错误率E(error rate)</strong>:分类错误的样本数占总数的比例<br>$$ E=\frac{a}{m} $$<br>其中m为样本总数 a为样本分类错误数量  </li>
-</ul>
-<ul>
-<li><strong>精度A(accuracy)</strong>:分类正确的样本数占总数的比例<br>$$ A = 1- E = 1 - \frac{a}{m}$$<br><br></li>
-</ul>
-<ul>
-<li><strong>误差(error)</strong>:更加一般地,把学习器的实际预测输出与样本的真实输出之间的差异称为误差</li>
-<li><strong>训练误差(training error)</strong>:学习器在训练集上的误差称为训练误差</li>
-<li><strong>泛化误差(training error)</strong>:学习器在新样本上的误差称为泛化误差<br><br><blockquote>
-<p>Note:<br>显然,我们希望得到泛化误差小的学习器,然而,我们实现并不知道新样本是什么样,实际能做的是努力是训练误差最小化</p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<p><br></p>
-<h2 id="2-拟合效果"><a href="#2-拟合效果" class="headerlink" title="2 拟合效果"></a>2 拟合效果</h2><ul>
-<li><strong>过拟合(overfitting)</strong>:学习器把训练样本学得”太好了”,把训练样本自身的一些特点当作了所有现在样本都会有的一般性质,这样会导致泛化性能下降</li>
-<li><strong>欠拟合(underfitting)</strong>:学习器对训练样本的一般性质尚未学好<br><br><blockquote>
-<p>Note:<br>一. 欠拟合一般由于学习能力低下造成的.欠拟合比较容易克服,例如在决策树学习中拓展分支,在神经网络学习中增加训练次数等<br>二.过拟合是机器学习面临的关键障碍.过拟合是无法彻底避免的,我们所能做的只是”缓解”,或者说减少问题.</p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<h2 id="3-泛化误差评估"><a href="#3-泛化误差评估" class="headerlink" title="3 泛化误差评估"></a>3 泛化误差评估</h2><h3 id="3-1-留出法-hold-out"><a href="#3-1-留出法-hold-out" class="headerlink" title="3.1 留出法(hold-out)"></a>3.1 留出法(hold-out)</h3><p>留出法直接将数据集<em>D</em>划分两个互斥的集合,其中一个集合作为训练集<em>S</em>,另一个作为测试集<em>T</em>,则有<br>$$ D=S \cup T$$ $$ S \cap T= \emptyset $$<br><br></p>
+        <h2 id="1-算术运算符"><a href="#1-算术运算符" class="headerlink" title="1 算术运算符"></a>1 算术运算符</h2><p>在SELECT子句中可以使用常数或表达式<br>算术运算符:四则运算 <strong>+   -  *  \/</strong></p>
 <blockquote>
-<p>Note:<br>1.数据的划分要尽可能保持数据分布的一致性,避免因划分过程引入额外的偏差而对最终结果产生影响.例如在分类任务中至少保持样本的类别比例相似,则<strong>分层抽样</strong><br>2.留出法对<em>D</em>的划分有多种,因此,单次使用留出法得到的估计结果往往不够可靠稳定.一般要采用<strong>若干次随机划分,重复进行实验评估取平均值作为留出法的评估结果</strong></p>
+<p>Example:</p>
 </blockquote>
-<p><br></p>
-<h3 id="3-2-交叉验证法-cross-validation"><a href="#3-2-交叉验证法-cross-validation" class="headerlink" title="3.2 交叉验证法(cross validation)"></a>3.2 交叉验证法(cross validation)</h3><ul>
-<li>“交叉验证法”(k折交叉验证)先将数据集<em>D</em>划分为k个大小相似的互斥子集,即<br>$$D= D_{1} \cup D_{2} \cup … \cup D_{k}$$ $$D_{i} \cap D_{j}= \emptyset  (i \neq j)$$<br><a href="https://postimg.cc/bDx5Ck9H" target="_blank" rel="noopener"><img src="https://i.postimg.cc/DZHKzcWD/image.png" alt="image.png"></a><blockquote>
-<p>Note:<br>一.每个子集都要尽可能保持数据分布的一致性,即从<em>D</em>中分层抽样<br>二.与留出法相似,将数据集<em>D</em>划分为k个子集同样存在多种划分方法.为减少由于划分引入的偏差,一般将k折交叉验证随机使用不同的划分重复p次,最终评估结果是这p次k折交叉验证结果的均值</p>
+<pre><code>mysql&gt; SELECT product_name, sale_price,
+    -&gt;        sale_price * 2 AS &quot;sale_price_x2&quot;
+    -&gt;   FROM Product;
++--------------+------------+---------------+
+| product_name | sale_price | sale_price_x2 |
++--------------+------------+---------------+
+| T恤          |       1000 |          2000 |
+| 打孔器       |        500 |          1000 |
+| 运动T恤      |       4000 |          8000 |
+| 菜刀         |       3000 |          6000 |
+| 高压锅       |       6800 |         13600 |
+| 叉子         |        500 |          1000 |
+| 擦菜板       |        880 |          1760 |
+| 圆珠笔       |        100 |           200 |
++--------------+------------+---------------+
+8 rows in set (0.03 sec)
+</code></pre><blockquote>
+<p>Note:<br>1 可以使用()来改变运算优先级<br>2 包含NULL的计算,结果肯定是NULL</p>
 </blockquote>
-</li>
-</ul>
+<h2 id="2-比较运算符"><a href="#2-比较运算符" class="headerlink" title="2 比较运算符"></a>2 比较运算符</h2><p>在WHERE子句中可以使用比较运算符进行复杂的条件筛选,组合出各种各样的条件表达式</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">=</td>
+<td style="text-align:center">等于</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;&gt;</td>
+<td style="text-align:center">不等于</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;</td>
+<td style="text-align:center">大于</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;</td>
+<td style="text-align:center">小于</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;=</td>
+<td style="text-align:center">大于等于</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;=</td>
+<td style="text-align:center">小于等于</td>
+</tr>
+</tbody>
+</table>
 <p><br></p>
-<ul>
-<li>留一法<br>假定数据集<em>D</em>中包含m个样本,若令k=m,则得到了交叉验证法的一个特例:<strong>留一法</strong><blockquote>
-<p>Note:<br>优点<br>一.留一法不受随机样本划分方式的影响,因为划分方式是唯一的<br>二.留一法中被实际评估的模型与期望评估的用<em>D</em>训练出的模型很相似<br>缺点:计算开销大</p>
-</blockquote>
-</li>
-</ul>
-<p><br></p>
-<h3 id="3-3-自助法Bootstrap"><a href="#3-3-自助法Bootstrap" class="headerlink" title="3.3 自助法Bootstrap"></a>3.3 自助法Bootstrap</h3><p>自助法的基本思想是：给定包含m个样本的数据集D，每次随机从D 中挑选一个样本，将其拷贝放入D’，然后再将该样本放回初始数据集D 中，使得该样本在下次采样时仍有可能被采到。重复执行m 次，就可以得到了包含m个样本的数据集D’。可以得知在m次采样中，样本始终不被采到的概率取极限为：</p>
-<p>$$\lim_{x\to\infty}(1-\frac{1}m{})^m\to \frac{1}{e}\approx0.368$$<br>这样，通过自助采样，初始样本集D中大约有36.8%的样本没有出现在D’中，于是可以将D’作为训练集，D-D’作为测试集。</p>
 <blockquote>
-<p>Note:<br>1.Bootstrap的本质是放回抽样<br>2.优点:我们希望评估的是用整个D训练出的模型。但在留出法和交叉验证法中，由于保留了一部分样本用于测试，因此实际评估的模型所使用的训练集比D小，这必然会引入一些因训练样本规模不同而导致的估计偏差。留一法受训练样本规模变化的影响较小，但计算复杂度又太高了。“自助法”正是解决了这样的问题。<br>3.缺点:自助法在数据集较小，难以有效划分训练集/测试集时很有用，但由于自助法产生的数据集（随机抽样）改变了初始数据集的分布，因此引入了估计偏差。在初始数据集足够时，留出法和交叉验证法更加常用。</p>
+<p>等号与不等号</p>
 </blockquote>
-<hr>
-<h2 id="4-验证集"><a href="#4-验证集" class="headerlink" title="4 验证集"></a>4 验证集</h2><ul>
-<li><strong>测试数据</strong>:把学得模型在实际使用中遇到的数据称为测试数据.</li>
-<li><strong>验证集(validation set)</strong>:为了加以区分,模型评估与选择中用于评估测试的数据集常称为”验证集”.<blockquote>
-<p>Note:例如,在研究对比不同算法的泛化性能时,我们用测试集上的判别效果来估计在实际使用时的泛化能力,而把训练数据另外划分为训练集和验证集,基于验证集上的性能来进行模型选择和调参</p>
+<pre><code>mysql&gt; SELECT product_name, product_type
+    -&gt;   FROM Product
+    -&gt;  WHERE sale_price = 500;
++--------------+--------------+
+| product_name | product_type |
++--------------+--------------+
+| 打孔器       | 办公用品     |
+| 叉子         | 厨房用具     |
++--------------+--------------+
+2 rows in set (0.00 sec)
+
+mysql&gt; SELECT product_name, product_type
+    -&gt;   FROM Product
+    -&gt;  WHERE sale_price &lt;&gt; 500;
++--------------+--------------+
+| product_name | product_type |
++--------------+--------------+
+| T恤          | 衣服         |
+| 运动T恤      | 衣服         |
+| 菜刀         | 厨房用具     |
+| 高压锅       | 厨房用具     |
+| 擦菜板       | 厨房用具     |
+| 圆珠笔       | 办公用品     |
++--------------+--------------+
+6 rows in set (0.00 sec)
+</code></pre><p><br></p>
+<blockquote>
+<p>大于等于号</p>
 </blockquote>
-</li>
-</ul>
+<pre><code>mysql&gt; SELECT product_name, product_type, sale_price
+    -&gt;   FROM Product
+    -&gt;  WHERE sale_price &gt;= 1000;
++--------------+--------------+------------+
+| product_name | product_type | sale_price |
++--------------+--------------+------------+
+| T恤          | 衣服         |       1000 |
+| 运动T恤      | 衣服         |       4000 |
+| 菜刀         | 厨房用具     |       3000 |
+| 高压锅       | 厨房用具     |       6800 |
++--------------+--------------+------------+
+4 rows in set (0.00 sec)
+</code></pre><p><br></p>
+<blockquote>
+<p>日期也可以使用比较运算符</p>
+</blockquote>
+<pre><code>mysql&gt; SELECT product_name, product_type, regist_date
+    -&gt;   FROM Product
+    -&gt;  WHERE regist_date &lt; &#39;2009-09-27&#39;;
++--------------+--------------+-------------+
+| product_name | product_type | regist_date |
++--------------+--------------+-------------+
+| T恤          | 衣服         | 2009-09-20  |
+| 打孔器       | 办公用品     | 2009-09-11  |
+| 菜刀         | 厨房用具     | 2009-09-20  |
+| 高压锅       | 厨房用具     | 2009-01-15  |
+| 叉子         | 厨房用具     | 2009-09-20  |
+| 擦菜板       | 厨房用具     | 2008-04-28  |
++--------------+--------------+-------------+
+6 rows in set (0.01 sec)
+</code></pre><p><br></p>
+<blockquote>
+<p>多列运算</p>
+</blockquote>
+<p>筛选出 售价大于进货价500元以上的商品</p>
+<pre><code>mysql&gt; SELECT product_name, sale_price, purchase_price
+    -&gt;   FROM Product
+    -&gt;  WHERE sale_price - purchase_price &gt;= 500;
++--------------+------------+----------------+
+| product_name | sale_price | purchase_price |
++--------------+------------+----------------+
+| T恤          |       1000 |            500 |
+| 运动T恤      |       4000 |           2800 |
+| 高压锅       |       6800 |           5000 |
++--------------+------------+----------------+
+3 rows in set (0.01 sec)
+</code></pre><p><br></p>
+<blockquote>
+<p>Note:<br>1 对字符串类型使用比较运算符,使用的是和数字比较不同的规则.典型的规则就是按照字典顺序进行比较<br>2 不可以对NULL使用比较运算符</p>
+</blockquote>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在邮件至 670997051@qq.com </span>
@@ -349,12 +434,12 @@
 
 
 <div class="article_copyright">
-    <p><span>文章标题:</span>模型评估--泛化误差评估</p>
+    <p><span>文章标题:</span>sql入门(4)--算术运算符和比较运算符</p>
     
     <p><span>本文作者:</span><a href="javascript:void(0)" title="why">why</a></p>
-    <p><span>发布时间:</span>2019-12-25, 12:17:54</p>
-    <p><span>最后更新:</span>2019-12-30, 22:54:53</p>
-    <span>原始链接:</span><a class="post-url" href="/2019/12/25/Machine-Learning/模型评估--数据集划分/" title="模型评估--泛化误差评估">http://yoursite.com/2019/12/25/Machine-Learning/模型评估--数据集划分/</a>
+    <p><span>发布时间:</span>2019-12-31, 00:25:00</p>
+    <p><span>最后更新:</span>2019-12-31, 00:31:04</p>
+    <span>原始链接:</span><a class="post-url" href="/2019/12/31/MYSQL/sql入门(4)--算术运算符和比较运算符/" title="sql入门(4)--算术运算符和比较运算符">http://yoursite.com/2019/12/31/MYSQL/sql入门(4)--算术运算符和比较运算符/</a>
     <p>
         <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
